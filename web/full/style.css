@@ -63,7 +63,7 @@ li{
 }
 
 .midia{
-    align-items: center;
+    align-items:center;
     justify-content: space-between;
     padding: 1rem 1.5rem;
     display: flex;
@@ -86,16 +86,22 @@ li{
  
 }
 
-.controle_dados{
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    display: flex;
+h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
 }
 
+.titulos_controle{
+    float: left;
+    display: inline-flexbox;
+    margin-left: 15%;
+}
+
+
+
 .directional-buttons {
-    margin: 15%;
-    margin-left: 35%;
+    margin: 1rem;
+    margin-left: 20%;
     width: 16rem;
     height: 16rem;
     display: grid;
@@ -148,12 +154,12 @@ li{
   
   
   .direction-button:hover {
-    color: rgb(85,55,55);
+    color: rgb(59, 55, 85);
 }
   
   
   .direction-button:active:after {
-    color: rgb(255, 152, 152);
+    color: rgb(152, 181, 255);
 }
 
 .up {
@@ -221,12 +227,17 @@ li{
     bottom: -1rem;
 }
 
+.titulos_dados{
+    float: right;
+    display: inline-flexbox;
+    margin-right: 5%;
+}
 
 .footer{
     bottom: 0;
     background-image: linear-gradient(to right, rgb(31, 31, 95), rgb(47, 47, 47));
     min-width: 100%;
-    min-height: 50px;
+    min-height: 50%;
     align-items: center;
     justify-content: center;
     padding: 1rem;
