@@ -29,8 +29,8 @@ function init(){
   var viewer = new MJPEGCANVAS.Viewer({
     divID : 'mjpeg', //div for viewer generation
     host : ip_address,
-    width : 640,
-    height : 480,
+    width : 540,
+    height : 380,
     topic : camera_topic,
     interval : 200
   });
@@ -38,8 +38,8 @@ function init(){
   //ROS2D Map Viewer
   var viewer = new ROS2D.Viewer({
     divID : 'map', //same happens here
-    width : 640,
-    height : 480  
+    width : 540,
+    height : 380, 
   });
 
   var gridClient = new ROS2D.OccupancyGridClient({

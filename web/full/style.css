@@ -60,19 +60,29 @@ li{
     text-align: justify;
 }
 
+.midia{
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    display: flex;
+}
+
 .video {
     float:left;
+    display: inline-flexbox;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
+
 
 } 
 
 .mapa {
     float:right;
+    display: inline-flexbox;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
+ 
 }
-    
 
 
 .footer{
