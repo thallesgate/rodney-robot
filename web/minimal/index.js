@@ -3,6 +3,13 @@ var ip_address = '192.168.1.200'; //Robot IP
 var camera_topic = '/camera/rgb/image_rect_color'; //This is to allow us to change between /camera/rgb/image_rect_color and /camera/ir/image_rect_ir
 var occupancygrid_topic = '/rtabmap/grid_map'; ///rtabmap/octomap_grid grid_map odom_local_map
 
+var videoFeedWidth = 640;
+var videoFeedHeight = 480;
+var videoFeedInterval = 200;
+
+var mapWidth = 640;
+var mapHeight = 480;
+
 //ROS Connectivity
 //ROS: Initializing ROS Library
   var ros = new ROSLIB.Ros({
@@ -24,21 +31,22 @@ var occupancygrid_topic = '/rtabmap/grid_map'; ///rtabmap/octomap_grid grid_map 
 
 //Main method to initialize viewers.
 function init(){
+
   //MJPEG library function
   var viewer = new MJPEGCANVAS.Viewer({
-    divID : 'mjpeg', //div for viewer generation
+    divID : 'videoFeed', //div for viewer generation
     host : ip_address,
-    width : 640,
-    height : 480,
+    width : videoFeedWidth,
+    height : videoFeedHeight,
     topic : camera_topic,
-    interval : 200
+    interval : videoFeedInterval
   });
 
   //ROS2D Map Viewer
   var viewer = new ROS2D.Viewer({
     divID : 'map', //same happens here
-    width : 640,
-    height : 480  
+    width : mapWidth,
+    height : mapHeight  
   });
 
   var gridClient = new ROS2D.OccupancyGridClient({
