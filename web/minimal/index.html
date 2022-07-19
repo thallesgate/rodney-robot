@@ -1,0 +1,26 @@
+<html lang="pt-br">
+    <head>
+        <title>Teste de library</title>
+
+        <!-- Dependencies of ROS2D-->
+        <script src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+        <script src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+        <script src="https://static.robotwebtools.org/EaselJS/current/easeljs.js"></script>
+        <script src="https://static.robotwebtools.org/ros2djs/current/ros2d.min.js"></script> 
+        <!-- ROS3D-->
+        <script src="https://static.robotwebtools.org/ros3djs/current/ros3d.min.js"></script>
+        <!-- Video Streaming-->
+        <script src="https://static.robotwebtools.org/mjpegcanvasjs/current/mjpegcanvas.js"></script>
+        <!-- Main Index Script -->
+        <script src="index.js"></script>
+    </head>
+    <!-- Initialize body and execute index.js init() -->
+    <body id="body" onload="init()" style="padding: 5px;">
+        <h1> Video Feed </h1>
+        <div id="mjpeg"></div> <!-- Motion JPEG library preview window -->
+        <br>
+        <h1> Map preview</h1>
+        <div id="map"></div> <!-- Ros2D library OccupancyGrid map preview window-->
+        <br>
+    </body>
+</html>
