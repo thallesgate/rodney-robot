@@ -14,8 +14,6 @@
         <script src="https://static.robotwebtools.org/mjpegcanvasjs/current/mjpegcanvas.js"></script>
         <!-- Main Index Script -->
         <script src="site.js"></script>
-
-       
     </head>
 
     <header>
@@ -36,7 +34,7 @@
         
     </header>
 
-    <body onload="init()">
+    <body onload="initViewers()">
 
         <div class="sobre">
             <p style="float: left; background-color:rgb(222, 214, 214) ;border-radius: 10px; font-size: 18px; font-family: Verdana, Geneva, Tahoma, sans-serif; padding: 2%; margin: 2%; text-align: justify;"><b>Sobre Rodney</b><br><br>
@@ -45,10 +43,10 @@
         </div>
 
         <div class="midia">
-            <div class="video"  style="float:left; display: inline-block;  padding: 2%; margin-left: 10%;">
+            <div class="video"  style="float: left; display: inline-block;  padding: 2%; margin-left: 10%;">
                 <h2> Video Feed </h2>
                 <br>
-                <div id="mjpeg"></div> <!-- Motion JPEG library preview window -->
+                <div id="videoFeed"></div> <!-- Motion JPEG library preview window -->
             
             </div>
 
@@ -59,15 +57,14 @@
             
             </div>
         </div>
-        
-        <div class="titulos_controle" style="float:left; inline-block">
+          
+        <div class="titulos_controle" style="float: left; inline-block">
             <h2>Controles</h2>
         </div>  
         
         <div class="titulos_dados" style="float: right; inline-block">
             <h2>Dados</h2>
         </div>          
-
                  
         <div class="controle_dados">
             
@@ -86,10 +83,7 @@
                 </button>
           </div>
         </div>
-
-
     </body>
-
     
     <footer class="footer">
         <h3>
