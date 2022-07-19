@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Rodney Lataria</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+        <script src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+        <script src="https://static.robotwebtools.org/EaselJS/current/easeljs.js"></script>
+        <script src="https://static.robotwebtools.org/ros2djs/current/ros2d.min.js"></script> 
+        <!-- ROS3D-->
+        <script src="https://static.robotwebtools.org/ros3djs/current/ros3d.min.js"></script>
+        <!-- Video Streaming-->
+        <script src="https://static.robotwebtools.org/mjpegcanvasjs/current/mjpegcanvas.js"></script>
+        <!-- Main Index Script -->
+        <script src="site.js"></script>
+    </head>
+
+    <header>
+        <nav class="navbar">
+            <a href="" class="navlogo">Rodney Lataria</a>
+                       
+            <div class="nav-menu">
+                <div class="nav-item"><a href="" class="nav-link">Configuração</a></div>
+                   
+                <div class="nav-item"><a href="" class="nav-link">Conexão</a></div>
+                
+            <div class="conexão">                
+                <input type="text" placeholder="Conectar">
+                <button type="submit">Ok</button>
+            </div>
+
+        </nav>         
+        
+    </header>
+
+    <body onload="init()">
+
+        <div class="sobre">
+            <p style="float: left; background-color:rgb(222, 214, 214) ;border-radius: 10px; font-size: 18px; font-family: Verdana, Geneva, Tahoma, sans-serif; padding: 2%; margin: 2%; text-align: justify;"><b>Sobre Rodney</b><br><br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, quidem asperiores sapiente consequuntur vero dolorem, voluptate quae quis ut nobis expedita nulla cumque eaque at perspiciatis. Doloribus amet labore impedit?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, illum. Aut voluptatibus quas molestiae libero, aliquid dicta consectetur, debitis nulla assumenda temporibus hic aspernatur inventore, quasi saepe veniam sapiente accusamus?
+            </p>
+        </div>
+
+        <div class="video"  style="padding: 4%; margin-left: 10%;">
+            <h2> Video Feed </h2>
+            <div id="mjpeg"></div> <!-- Motion JPEG library preview window -->
+           
+        </div>
+
+        <div class="mapa"  style="padding: 4%; margin-right: 15%;">
+        <h2> Map preview</h2>
+        <div id="map"></div> <!-- Ros2D library OccupancyGrid map preview window-->
+        
+        </div>
+          
+        
+    </body>
+
+    
+    <footer class="footer">
+        <h3>
+            Desenvolvido por Thalles Silva e Vanessa Gellert
+        </h3>
+
+    </footer>
+
+   
+</html>

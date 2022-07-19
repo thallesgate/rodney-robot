@@ -1,0 +1,94 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-family: monospace;
+    }
+
+.navbar{
+    background-image: linear-gradient(to right, rgb(31, 31, 95), rgb(47, 47, 47));
+    min-width: 100%;
+    min-height: 70px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    display: flex;
+}
+
+.navlogo{
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.nav-item{
+    margin-right: 1rem;
+    display: inline-block;
+}
+
+.nav-link{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    color: rgb(122, 112, 125);
+
+}
+
+li{
+    list-style-type: none;
+}
+
+.p{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color:black;
+    text-align: justify;
+}
+
+.video {
+    float:left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+
+} 
+
+.mapa {
+    float:right;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+    
+
+
+.footer{
+    background-image: linear-gradient(to right, rgb(31, 31, 95), rgb(47, 47, 47));
+    min-width: 100%;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.footer h3{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 500;
+}
