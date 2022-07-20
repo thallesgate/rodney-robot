@@ -70,7 +70,6 @@ li{
 }
 
 .video {
-    justify-content: space-evenly;
     float:left;
     display: inline-flexbox;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -80,7 +79,6 @@ li{
 } 
 
 .mapa {
-    justify-content: space-evenly;
     float:right;
     display: inline-flexbox;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -94,16 +92,18 @@ h2{
 }
 
 .controle_dados{
-    display: flexbox;
+    display: inline-flexbox;
     align-items:center;
     justify-content: space-evenly;
     padding: 1rem 1.5rem;
 }
 
-.dados_coletados{
-    display: flexbox;
+.dados{
+    float: right;
+    display: inline-flexbox;
     justify-content: space-evenly;
-    padding: 1rem 1.5rem;    
+    padding: 1rem 1.5rem;   
+    
 }
 
 
@@ -245,6 +245,7 @@ h2{
 
 .footer{
     bottom: 0;
+    display: flex;
     background-image: linear-gradient(to right, rgb(31, 31, 95), rgb(47, 47, 47));
     min-width: 100%;
     min-height: 50%;
