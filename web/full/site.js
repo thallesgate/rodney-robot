@@ -51,14 +51,14 @@ var cmdVel = new ROSLIB.Topic({
 
 var twistMsg = new ROSLIB.Message({
   linear : {
-    x : 0.1,
-    y : 0.2,
-    z : 0.3
+    x : 0.0,
+    y : 0.0,
+    z : 0.0
   },
   angular : {
-    x : -0.1,
-    y : -0.2,
-    z : -0.3
+    x : 0.0,
+    y : 0.0,
+    z : 0.0
   }
 });
 //     cmdVel.publish(twist); publish message
@@ -109,20 +109,29 @@ function updateControls(pressedButton){
   switch (pressedButton){
     case 'up':
       controlMsg.data = 'up';
+      twistMsg.linear.x = 0.1;
+      twistMsg.angular.z - 0.0;
       break;
     case 'down':
       controlMsg.data = 'down';
+      twistMsg.linear.x = -0.1;
+      twistMsg.angular.z = 0.0;
       break;
     case 'left':
       controlMsg.data = 'left';
+      twistMsg.linear.x = 0.0;
+      twistMsg.angular.z = -0.1;
       break;
     case 'right':
       controlMsg.data = 'right';
+      twistMsg.linear.x = 0.0;
+      twistMsg.angular.z = 0.1;
       break;
   }
   publishControls();
 }
+
 function publishControls(){
   webControls.publish(controlMsg);
-  //cmdVel.publish(twistMsg);
+  cmdVel.publish(twistMsg);
 }
