@@ -63,13 +63,14 @@ li{
 }
 
 .midia{
+    display: flexbox;
     align-items:center;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 1.5rem; 
 }
 
 .video {
+    justify-content: space-evenly;
     float:left;
     display: inline-flexbox;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -79,6 +80,7 @@ li{
 } 
 
 .mapa {
+    justify-content: space-evenly;
     float:right;
     display: inline-flexbox;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -91,15 +93,23 @@ h2{
     font-size: 16px;
 }
 
-.titulos_controle{
-    float: left;
-    display: inline-flexbox;
-    margin-left: 15%;
+.controle_dados{
+    display: flexbox;
+    align-items:center;
+    justify-content: space-evenly;
+    padding: 1rem 1.5rem;
+}
+
+.dados_coletados{
+    display: flexbox;
+    justify-content: space-evenly;
+    padding: 1rem 1.5rem;    
 }
 
 
 
 .directional-buttons {
+    position: relative;
     margin: 0;
     margin-left: 30%;
     width: 16rem;
