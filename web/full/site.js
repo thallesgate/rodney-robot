@@ -25,22 +25,52 @@ var mapHeight = 380;
 
 //ROS Connectivity
 //ROS: Initializing ROS Library
-  var ros = new ROSLIB.Ros({
-    url : 'ws://'+ip_address+":9090"  //websocket address with previously declared variable
-  });
+var ros = new ROSLIB.Ros({
+  url : 'ws://'+ip_address+":9090"  //websocket address with previously declared variable
+});
 
 //ROS: Logging Websocket Connection
-  ros.on('connection', function() {
-    console.log('Connected to websocket server.');
-  });
+ros.on('connection', function() {
+  console.log('Connected to websocket server.');
+});
 
-  ros.on('error', function(error) {
-    console.log('Error connecting to websocket server: ', error);
-  });
+ros.on('error', function(error) {
+  console.log('Error connecting to websocket server: ', error);
+});
 
-  ros.on('close', function() {
-    console.log('Connection to websocket server closed.');
-  });
+ros.on('close', function() {
+  console.log('Connection to websocket server closed.');
+});
+
+//create a topic for publishing twist messages.
+var cmdVel = new ROSLIB.Topic({
+  ros : ros,
+  name : '/cmd_vel',
+  messageType : 'geometry_msgs/Twist'
+});
+
+var twistMsg = new ROSLIB.Message({
+  linear : {
+    x : 0.1,
+    y : 0.2,
+    z : 0.3
+  },
+  angular : {
+    x : -0.1,
+    y : -0.2,
+    z : -0.3
+  }
+});
+//     cmdVel.publish(twist); publish message
+var webControls = new ROSLIB.Topic({
+  ros : ros,
+  name : '/web_controls',
+  messageType : 'std_msgs/String'
+});
+
+var controlMsg = new ROSLIB.Message({
+  data : 'none'
+})
 
 //Main method to initialize viewers.
 function initViewers(){
@@ -74,4 +104,25 @@ function initViewers(){
     mapViewer.shift(gridClient.currentGrid.pose.position.x, gridClient.currentGrid.pose.position.y);
   });
 
+}
+function updateControls(pressedButton){
+  switch (pressedButton){
+    case 'up':
+      controlMsg.data = 'up';
+      break;
+    case 'down':
+      controlMsg.data = 'down';
+      break;
+    case 'left':
+      controlMsg.data = 'left';
+      break;
+    case 'right':
+      controlMsg.data = 'right';
+      break;
+  }
+  publishControls();
+}
+function publishControls(){
+  webControls.publish(controlMsg);
+  //cmdVel.publish(twistMsg);
 }
