@@ -61,7 +61,7 @@ var twistMsg = new ROSLIB.Message({
     z : 0.0
   }
 });
-//     cmdVel.publish(twist); publish message
+//create topic for publishing string messages.
 var webControls = new ROSLIB.Topic({
   ros : ros,
   name : '/web_controls',
@@ -71,6 +71,18 @@ var webControls = new ROSLIB.Topic({
 var controlMsg = new ROSLIB.Message({
   data : 'none'
 })
+// create a topic subscriber
+var listener = new ROSLIB.Topic({
+  ros : ros,
+  name : '/listener',
+  messageType : 'std_msgs/String'
+});
+
+listener.subscribe(function(message) {
+  console.log('Received message on ' + listener.name + ': ' + message.data);
+  document.getElementById("data").innerHTML = 'Dados: ' + message.data;
+  //listener.unsubscribe();
+});
 
 //Main method to initialize viewers.
 function initViewers(){
@@ -134,4 +146,8 @@ function updateControls(pressedButton){
 function publishControls(){
   webControls.publish(controlMsg);
   cmdVel.publish(twistMsg);
+}
+
+function listenData(dataMsg){
+  document.getElementById("data").innerHTML = 'Dados: ' + dataMsg;
 }
