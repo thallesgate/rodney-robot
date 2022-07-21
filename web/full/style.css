@@ -20,6 +20,18 @@
     padding: 1rem 1.5rem;
 }
 
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.nav-item{
+    margin-right: 1rem;
+    display: inline-block;
+}
+
 
 .navlogo{
     color: white;
@@ -30,18 +42,9 @@
 
 .topnav {
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
     align-items: center;
-    margin-right: 1rem;
-    
-    
-}
-
-.nav-item {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    margin-right: 1rem;
+    margin-right: 1rem;   
 }
 
 .topnav a{
