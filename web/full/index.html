@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Rodney Interface Web</title>
         <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/9f7fbb1207.js" crossorigin="anonymous"></script>
         <script src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
         <script src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
         <script src="https://static.robotwebtools.org/EaselJS/current/easeljs.js"></script>
@@ -23,7 +24,7 @@
                        
             <div class="topnav">
                 <div class="dropdown">
-                  <button onclick="showConfigMenu()" class="dropbtn">Configuração</button>
+                  <button onclick="showConfigMenu()" class="dropbtn"><i class="fa-solid fa-gears"></i></button>
                     <div id="myDropdown" class="dropdown-content">
 
                         <label for="address">Endereço</label><br>
@@ -41,7 +42,7 @@
                             <option value="/rtabmap/grid_map">RTABMAP GridMap</option>
                         </select>
                         <br><br>
-                        <input type="button" onclick="showConfigMenu();saveConfiguration()" class="saveButton" value="Salvar">
+                        <input id="salvar" type="button" onclick="showConfigMenu();saveConfiguration()" class="saveButton" value="Salvar">
 
                     </div>
                 </div>
@@ -103,7 +104,7 @@
         <div class="dados" style="float:right; width: 53.5rem; height: 22rem; padding: 3%; padding-right: 5%; padding-left: 5%; margin-right: 20%; background-color: rgb(217, 217, 217); border-radius: 10px; margin: 2%;">
             <h2>Dados</h2>
             <br>
-            <div class="dados_coletados">
+            <div class="dados_coletados" style="font-family:Verdana ; font-size: 15px;">
                 <p>Dados de comando:</p>
                 <p id="jsButtonData">Nenhum dado recebido de /web_controls até o momento.</p>
                 <br>

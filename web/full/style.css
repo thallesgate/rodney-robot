@@ -61,8 +61,8 @@
     border: none;
     font-family: monospace;
     color: white;
-    font-weight: 500;
-    font-size: 17px;
+    width: 50%;
+    font-size: 30px;
 }
 
 .dropbtn {
@@ -109,6 +109,13 @@
     background-color: #ddd;
     color: black;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+#salvar {
+    width: 50px;
+    height: 20px;
+    border-radius: 15%;
+    border-color: rgb(112, 112, 114);
 }
 
 .show {display: block;}
