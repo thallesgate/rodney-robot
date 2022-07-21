@@ -36,13 +36,21 @@
             <div class="conexão">                
                     <input type="text" placeholder="Conectar">
                     <button type="submit">Ok</button>
+            <div class="nav-menu">
+                <div class="nav-item"><a href="" class="nav-link">Configuração</a></div>
+                   
+                <div id="jsConnection" class="nav-item"><a href="" class="nav-link">Conexão</a></div>
+                
+            <div class="conexão">
+                <input id="jsRosUrl" class="" type="text" name="connection" value="ws://localhost:9090" />
+                <button type="submit">Ok</button>
             </div>
 
         </nav>         
         
     </header>
 
-    <body onload="initViewers()">
+    <body onload="initialize()">
 
         <div class="sobre">
             <p style="background-color:rgb(217, 217, 217) ;border-radius: 10px; font-size: 18px; font-family: Verdana, Geneva, Tahoma, sans-serif; padding: 2%; margin: 2%; margin-bottom: 0%; text-align: justify;">
@@ -57,14 +65,14 @@
             <div class="video"  style="float:left; padding: 2%; padding-left: 5%; padding-right: 5%; margin-left: 10%; background-color: rgb(217, 217, 217); border-radius: 10px; margin: 1%;">
                 <h2> Video Feed </h2>
                 <br>
-                <div id="videoFeed"></div> <!-- Motion JPEG library preview window -->
+                <div id="jsVideoFeed"></div> <!-- Motion JPEG library preview window -->
             
             </div>
 
             <div class="mapa"  style="float:right; padding: 2%; padding-right: 5%; padding-left: 5%; margin-right: 20%; background-color: rgb(217, 217, 217); border-radius: 10px; margin: 1%;">
             <h2> Map Preview</h2>
             <br>
-            <div id="map"></div> <!-- Ros2D library OccupancyGrid map preview window-->
+            <div id="jsMap"></div> <!-- Ros2D library OccupancyGrid map preview window-->
             
             </div>
         </div>
@@ -94,7 +102,12 @@
         <div class="dados" style="float:right; width: 53.5rem; height: 22rem; padding: 3%; padding-right: 5%; padding-left: 5%; margin-right: 20%; background-color: rgb(217, 217, 217); border-radius: 10px; margin: 2%;">
             <h2>Dados</h2>
             <div class="dados_coletados">
-                <p id="data"> Placeholder</p>
+                <p>Dados de comando:</p>
+                <p id="jsButtonData">Nenhum dado recebido de /web_controls até o momento.</p>
+                <br>
+                <p>Dados de velocidade:</p>
+                <p id="jsVelocityDataX">Nenhum dado recebido de /cmd_vel até o momento.</p>
+                <p id="jsVelocityDataZ">Nenhum dado recebido de /cmd_vel até o momento.</p>
             </div>
 
 

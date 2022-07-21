@@ -11,22 +11,8 @@ function myFunction() {
 // Robot Information
 var ip_address = '192.168.1.100'; //Robot IP
 var camera_topic = '/camera/rgb/image_rect_color'; //This is to allow us to change between /camera/rgb/image_rect_color and /camera/ir/image_rect_ir
-var occupancygrid_topic = '/map'; // '/rtabmap/grid_map'; ///rtabmap/octomap_grid grid_map odom_local_map
-/*
-var videoFeedWidthPercentage = 35
-var videoFeedHeightPercentage = 40;
+var occupancygrid_topic = '/map'; //RTABMAP MAP: '/rtabmap/grid_map'; OR /rtabmap/octomap_grid OR grid_map OR odom_local_map
 
-var mapWidthPercentage = 35;
-var mapHeightPercentage = 40;
-
-
-var videoFeedWidth = (window.innerWidth * videoFeedWidthPercentage)/100;
-var videoFeedHeight = (window.innerHeight * videoFeedHeightPercentage)/100;
-var videoFeedInterval = 200;
-
-var mapWidth = (window.innerWidth * mapWidthPercentage)/100 ;
-var mapHeight = (window.innerHeight * mapHeightPercentage)/100;
-*/
 var videoFeedWidth = 540;
 var videoFeedHeight = 380;
 var videoFeedInterval = 200;
@@ -35,6 +21,9 @@ var mapHeight = 380;
 
 //ROS Connectivity
 //ROS: Initializing ROS Library
+function connect(ip_address){
+
+}
 var ros = new ROSLIB.Ros({
   url : 'ws://'+ip_address+":9090"  //websocket address with previously declared variable
 });
@@ -82,57 +71,23 @@ var controlMsg = new ROSLIB.Message({
   data : 'none'
 })
 // create a topic subscriber
-var listener = new ROSLIB.Topic({
+var webControlsListener = new ROSLIB.Topic({
   ros : ros,
-  name : '/listener',
+  name : '/web_controls',
   messageType : 'std_msgs/String'
 });
+var cmdVelListener = new ROSLIB.Topic({
+  ros : ros,
+  name : '/cmd_vel',
+  messageType : 'geometry_msgs/Twist'
+})
 
-listener.subscribe(function(message) {
-  console.log('Received message on ' + listener.name + ': ' + message.data);
-  document.getElementById("data").innerHTML = 'Dados: ' + message.data;
-  //listener.unsubscribe();
-});
-
-//Main method to initialize viewers.
-function initViewers(){
-
-  //MJPEG library function
-  var streamViewer = new MJPEGCANVAS.Viewer({
-    divID : 'videoFeed', //div for viewer generation
-    host : ip_address,
-    width : videoFeedWidth,
-    height : videoFeedHeight,
-    topic : camera_topic,
-    interval : videoFeedInterval
-  });
-
-  //ROS2D Map Viewer
-  var mapViewer = new ROS2D.Viewer({
-    divID : 'map', //same happens here
-    width : mapWidth,
-    height : mapHeight  
-  });
-
-  var gridClient = new ROS2D.OccupancyGridClient({
-    ros : ros,
-    rootObject : mapViewer.scene,
-    topic : occupancygrid_topic,
-    continuous : true,
-  });
-
-  gridClient.on('change', function(){
-    mapViewer.scaleToDimensions(gridClient.currentGrid.width, gridClient.currentGrid.height);
-    mapViewer.shift(gridClient.currentGrid.pose.position.x, gridClient.currentGrid.pose.position.y);
-  });
-
-}
 function updateControls(pressedButton){
   switch (pressedButton){
     case 'up':
       controlMsg.data = 'up';
       twistMsg.linear.x = 0.1;
-      twistMsg.angular.z - 0.0;
+      twistMsg.angular.z = 0.0;
       break;
     case 'down':
       controlMsg.data = 'down';
@@ -158,6 +113,48 @@ function publishControls(){
   cmdVel.publish(twistMsg);
 }
 
-function listenData(dataMsg){
-  document.getElementById("data").innerHTML = 'Dados: ' + dataMsg;
+//Main method to initialize viewers and subscribers
+function initialize(){
+
+  webControlsListener.subscribe(function(message) {
+    console.log('Received message on ' + webControlsListener.name + ': ' + message.data);
+    document.getElementById("jsButtonData").innerHTML = 'Mensagem dos controles: ' + message.data;
+    //listener.unsubscribe();
+  });
+
+  cmdVelListener.subscribe(function(message) {
+    console.log('Received message on ' + cmdVelListener.name);
+    document.getElementById("jsVelocityDataX").innerHTML = 'X: ' + message.linear.x + ' m/s'
+    document.getElementById("jsVelocityDataZ").innerHTML = 'Z: ' + message.angular.z + ' πrad/s'
+  })
+  
+  //MJPEG library function
+  var streamViewer = new MJPEGCANVAS.Viewer({
+    divID : 'jsVideoFeed', //div for viewer generation
+    host : ip_address,
+    width : videoFeedWidth,
+    height : videoFeedHeight,
+    topic : camera_topic,
+    interval : videoFeedInterval
+  });
+
+  //ROS2D Map Viewer
+  var mapViewer = new ROS2D.Viewer({
+    divID : 'jsMap', //same happens here
+    width : mapWidth,
+    height : mapHeight  
+  });
+
+  var gridClient = new ROS2D.OccupancyGridClient({
+    ros : ros,
+    rootObject : mapViewer.scene,
+    topic : occupancygrid_topic,
+    continuous : true,
+  });
+
+  gridClient.on('change', function(){
+    mapViewer.scaleToDimensions(gridClient.currentGrid.width, gridClient.currentGrid.height);
+    mapViewer.shift(gridClient.currentGrid.pose.position.x, gridClient.currentGrid.pose.position.y);
+  });
+
 }
