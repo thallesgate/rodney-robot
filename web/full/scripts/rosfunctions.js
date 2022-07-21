@@ -11,9 +11,7 @@ var mapHeight = 380;
 
 //ROS Connectivity
 //ROS: Initializing ROS Library
-function connect(ip_address){
 
-}
 var ros = new ROSLIB.Ros({
   url : 'ws://'+ip_address+":9090"  //websocket address with previously declared variable
 });
