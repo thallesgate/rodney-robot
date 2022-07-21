@@ -23,8 +23,7 @@
                        
             <div class="topnav">
                 <div class="dropdown">
-                  <button class="configuracao">Configuração<i class="lista"></i>
-                  </button>
+                  <button onclick="showConfigMenu()" class="dropbtn">Configuração</button>
                     <div id="myDropdown" class="dropdown-content">
 
                         <label for="address">Endereço</label><br>
@@ -42,7 +41,7 @@
                             <option value="/rtabmap/grid_map">RTABMAP GridMap</option>
                         </select>
                         <br><br>
-                        <input type="button" onclick="saveConfiguration()" class="saveButton" value="Salvar">
+                        <input type="button" onclick="showConfigMenu();saveConfiguration()" class="saveButton" value="Salvar">
 
                     </div>
                 </div>
