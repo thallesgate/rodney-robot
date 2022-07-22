@@ -55,7 +55,7 @@
 
         <div class="sobre">
             <p style="background-color:rgb(217, 217, 217) ;border-radius: 10px; font-size: 18px; font-family: Verdana, Geneva, Tahoma, sans-serif; padding: 2%; margin: 2%; margin-bottom: 0%; text-align: justify;">
-                <b>Sobre este site...</b>
+                <b style="font-family: monospace; font-size: 20px;">Sobre este site...</b>
                 <br><br>
                 O Rodney Interface foi pensado como uma maneira simplificada de teleoperar o robô Rodney. Ele utiliza o ROS (Robot Operating System) que é uma coleção de frameworks de software para desenvolvimento de um sistema operacional para robôs.  Dentro desse sistema, possuímos os chamados 'Nós' (ou Nodes), que são programas com uma função específica. Os 'Nós' conseguem trocar informações entre si através de tópicos e mensagens, esses tópicos são como se fossem o título da conversa, e as mensagens são as informações trocadas, podendo ser de todo tipo, como: textos, vetores e até imagens. A página da web utiliza bibliotecas que se comunicam com o sistema do robô para receber e enviar mensagens. É assim que podemos controlá-lo em tempo real, ver imagens da câmera, receber um retorno dos sensores renderizando um mapa, além de enviar comandos e receber dados do robô.                 
             </p>
@@ -64,14 +64,14 @@
         
         <div class="midia">
             <div class="video"  style="float:left; padding: 2%; padding-left: 5%; padding-right: 5%; margin-left: 10%; background-color: rgb(217, 217, 217); border-radius: 10px; margin: 1%;">
-                <h2>Feed de vídeo</h2>
+                <h2 style="font-family: monospace; font-size: 20px;">Feed de vídeo</h2>
                 <br>
                 <div id="jsVideoFeed"></div> <!-- Motion JPEG library preview window -->
             
             </div>
 
             <div class="mapa"  style="float:right; padding: 2%; padding-right: 5%; padding-left: 5%; margin-right: 20%; background-color: rgb(217, 217, 217); border-radius: 10px; margin: 1%;">
-            <h2>Mapa 2D</h2>
+            <h2 style="font-family: monospace; font-size: 20px;">Mapa 2D</h2>
             <br>
             <div id="jsMap"></div> <!-- Ros2D library OccupancyGrid map preview window-->
             
@@ -83,7 +83,7 @@
         </div>  
         
        <div class="controle_dados" style="float: left; display: flexbox; width: 53.5rem; padding: 2%; padding-left: 5%; padding-right: 5%; margin: 2%; margin-left: 2%; margin-bottom: 2%; background-color: rgb(217, 217, 217); border-radius: 10px; display: inline-flexbox; justify-content: space-evenly;">
-            <h2>Controles</h2>
+            <h2 style="font-family: monospace; font-size: 20px;">Controles</h2>
             <div class="directional-buttons">
                 <button class="direction-button up" onclick="updateControls('up')">
                 <span class="visually-hidden">up</span>
@@ -101,7 +101,7 @@
         </div>
 
         <div class="dados" style="float:right; width: 53.5rem; height: 22rem; padding: 3%; padding-right: 5%; padding-left: 5%; margin-right: 20%; background-color: rgb(217, 217, 217); border-radius: 10px; margin: 2%;">
-            <h2>Dados</h2>
+            <h2 style="font-family: monospace; font-size: 20px;">Dados</h2>
             <br>
             <div class="dados_coletados" style="font-family:Verdana ; font-size: 15px;">
                 <p>Dados de comando:</p>
