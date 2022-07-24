@@ -1,5 +1,5 @@
 // Robot Information
-var ip_address = '177.209.123.253'; //Robot IP
+var ip_address = '192.168.1.100'; //Robot IP
 var camera_topic = '/camera/rgb/image_color'; //This is to allow us to change between /camera/rgb/image_rect_color and /camera/ir/image_rect_ir
 var occupancygrid_topic = '/map'; //RTABMAP MAP: '/rtabmap/grid_map'; OR /rtabmap/octomap_grid OR grid_map OR odom_local_map
 
