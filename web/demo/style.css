@@ -1,0 +1,362 @@
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        
+    }
+
+    html{
+        font-family: monospace;
+    }
+
+.navbar{
+    display: inline-flex;
+    background-image: linear-gradient(to right, rgb(31, 31, 95), rgb(47, 47, 47));
+    min-width: 100%;
+    min-height: 70px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1.5rem;
+}
+
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.nav-item{
+    margin-right: 1rem;
+    display: inline-block;
+}
+
+
+.navlogo{
+    margin-left: 1%;
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1rem;   
+}
+
+.topnav a{
+    color:white;
+    text-align: center;
+    justify-content: right;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav .dropdown button {
+    background-color: transparent;
+    border: none;
+    font-family: monospace;
+    color: white;
+    width: 50%;
+    font-size: 30px;
+}
+
+.dropbtn {
+    background-color: rgb(31, 31, 95);
+    font-size: 17px;
+    border: none;
+    outline: none;
+    color: rgb(31, 31, 95);
+    padding: 16px 16px;
+    margin: 0 auto;
+    cursor:pointer;
+}
+
+.dropdown {
+    float: right;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    overflow:auto;
+    min-width: 160px;
+    border-radius: 10%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 12px;
+    font-family:Verdana;
+    font-size: 14px;
+    right:0px;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+    color: black;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+#jsInputAddress{
+    top: 50%;
+    margin-top: 3px;
+    margin-bottom: 6px;
+}
+
+#jsCameraTopicSelect{
+    top: 50%;
+    margin-top: 3px;
+    margin-bottom: 6px;
+}
+
+#jsMapTopicSelect{
+    top: 50%;
+    margin-top: 3px;
+}
+
+
+
+#salvar {
+    width: 50px;
+    height: 20px;
+    border-radius: 15%;
+    border-color: rgb(112, 112, 114);
+}
+
+.show {display: block;}
+
+.nav-link{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    color: rgb(122, 112, 125);
+
+}
+
+.p{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color:black;
+    text-align: justify;
+}
+
+.midia{
+    display: flexbox;
+    align-items:center;
+    justify-content: space-evenly;
+    padding: 1rem 1.5rem; 
+}
+
+.video {
+    float:left;
+    display: inline-flexbox;
+    justify-content: space-evenly;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+
+
+} 
+
+.mapa {
+    float:right;
+    display: inline-flexbox;
+    justify-content: space-evenly;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+ 
+}
+
+h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+.controle_dados{
+    display: inline-flexbox;
+    align-items:center;
+    justify-content: space-evenly;
+    padding: 1rem 1.5rem;
+}
+
+.dados{
+    float: right;
+    display: inline-flexbox;
+    justify-content: space-evenly;
+    padding: 1rem 1.5rem;   
+    
+}
+
+
+.directional-buttons {
+    position: relative;
+    margin: 0;
+    margin-left: 30%;
+    width: 16rem;
+    height: 16rem;
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: 45fr 60fr 45fr;
+    grid-template-rows: 45fr 60fr 45fr;
+    grid-template-areas: "....  up  ....."
+                         "left  ..  right"
+                         ".... down .....";    
+}
+  
+  
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; 
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); 
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+  
+  
+.direction-button {
+    color: rgb(55, 50, 50);
+    background: currentcolor;
+    border: none;
+    position: relative;
+}
+  
+  
+.direction-button:before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 4.25rem;
+    height: 4.25rem;
+    transform: rotate(45deg);
+    background: currentcolor;
+}
+  
+  
+.direction-button:after {
+    display: block;
+    content: "";
+    position: absolute;
+    border: 2rem solid transparent;
+    color: rgba(255, 250, 250, 0.6);
+}
+  
+  
+  .direction-button:hover {
+    color: rgb(59, 55, 85);
+}
+  
+  
+  .direction-button:active:after {
+    color: rgb(152, 181, 255);
+}
+
+.up {
+    grid-area: up;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.up:before {
+    left: calc(50% - 2.125rem);
+    bottom: -2.125rem;
+}
+
+.up:after {
+    border-bottom-color: currentcolor;
+    left: calc(50% - 2rem);
+    top: -1rem;
+}
+  
+.left {
+    grid-area: left;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.left:before {
+    right: -2.125rem;
+    top: calc(50% - 2.125rem);
+}
+
+.left:after {
+    border-right-color: currentcolor;
+    top: calc(50% - 2rem);
+    left: -1rem;
+}
+  
+.right {
+    grid-area: right;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.right:before {
+    left: -2.125rem;
+    top: calc(50% - 2.125rem);
+}
+
+.right:after {
+    border-left-color: currentcolor;
+    top: calc(50% - 2rem);
+    right: -1rem;
+}
+
+  
+.down {
+    grid-area: down;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.down:before {
+    left: calc(50% - 2.125rem);
+    top: -2.125rem;
+}
+
+.down:after {
+    border-top-color: currentcolor;
+    left: calc(50% - 2rem);
+    bottom: -1rem;
+}
+
+.titulos_dados{
+    float: right;
+    display: inline-flexbox;
+    margin-right: 5%;
+}
+
+.footer{
+    bottom: 0;
+    display: flex;
+    background-image: linear-gradient(to right, rgb(31, 31, 95), rgb(47, 47, 47));
+    min-width: 100%;
+    min-height: 50%;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    display: flex;
+    
+}
+
+.footer h3{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 500;
+}
