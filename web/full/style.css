@@ -85,7 +85,7 @@ ul {
     justify-content: space-evenly;
     gap: 1rem;
     max-width: 1000px;
-    margin: 5.5rem auto -6rem;
+    margin: 4rem auto -6rem;
 }
 
 .intro-text {
@@ -95,8 +95,8 @@ ul {
 
 .intro-text h2{
     text-align: center;
-    width: 600px;
-    font-size: 2.5rem;
+    width: 700px;
+    font-size: 2.8rem;
     margin-right: 0%;
     padding: 1rem;
 }
@@ -104,8 +104,8 @@ ul {
 .intro-text h3{
     margin-left: 0px;
     text-align: center;
-    width: 600px;
-    font-size: 1.5rem;
+    width: 720px;
+    font-size: 1.8rem;
     padding: 1rem;
 }
 
