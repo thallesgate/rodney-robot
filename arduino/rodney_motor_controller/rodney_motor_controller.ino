@@ -10,12 +10,12 @@
 const byte noCommLoopMax = 10;                
 unsigned int noCommLoops = 0;                 
 
-#define GPIO_ENABLE  PA8
-#define GPIO_L_MOT_DIR  PB15                          
-#define GPIO_L_MOT_STEP  PB14         
-#define GPIO_R_MOT_DIR  PB13                  
-#define GPIO_R_MOT_STEP  PB12          
-#define GPIO_LED  PA9
+#define GPIO_ENABLE     2//PA8
+#define GPIO_L_MOT_DIR  3//PB15                          
+#define GPIO_L_MOT_STEP 5 //PB14         
+#define GPIO_R_MOT_DIR  4//PB13                  
+#define GPIO_R_MOT_STEP 6//PB12          
+#define GPIO_LED        9 //PA9
 
 #define motor_breaks 0
 bool l_mot_run = 1;
@@ -25,7 +25,7 @@ bool r_mot_dir = 1;
 unsigned long lastMilli = 0;
 
 #define     radius  0.04                   //Wheel radius, in M
-#define     wheelbase  0.21               //Wheelbase, in M
+#define     wheelbase  0.212               //Wheelbase, in M
 #define    wheel_reduction  4
 #define    motor_microstepping  4
 #define    motor_steps  200
@@ -83,7 +83,7 @@ void setup() {
   pinMode(GPIO_LED, OUTPUT);
   
   led.begin();
-  led.setBrightness(80);
+  led.setBrightness(50); //80
   led.fill(orange);
   led.show();
 
@@ -98,6 +98,11 @@ void setup() {
 
 void loop() {
   nh.spinOnce();
+  hehe();
+  motor_control(l_delay,r_delay,l_mot_dir,r_mot_dir,l_mot_run,r_mot_run);
+ }
+
+void hehe(){
   if((millis()-lastMilli) >= LOOPTIME)   
   {                                                                    
     lastMilli = millis();
@@ -171,12 +176,9 @@ void loop() {
     if (noCommLoops == 65535){
       noCommLoops = noCommLoopMax;
     }
-    motor_control(l_delay,r_delay,l_mot_dir,r_mot_dir,l_mot_run,r_mot_run);
     publishSpeed(LOOPTIME);   //Publish odometry on ROS topic
   }
- }
-
-
+}
 void publishSpeed(double time) {
   speed_msg.header.stamp = nh.now();      
   speed_msg.vector.x = l_speed_req;    
@@ -206,13 +208,15 @@ void motor_control(double l_delayx, double r_delayx, bool l_dir, bool r_dir, boo
     digitalWrite(GPIO_ENABLE, 0);
     digitalWrite(GPIO_L_MOT_STEP, 0);
     digitalWrite(GPIO_L_MOT_STEP, 1);
-    delay(l_delayx / 1000);
+    //delay(l_delayx / 1000);
+    delay(l_delayx*1000);
   }
   if (r_enable){
     digitalWrite(GPIO_ENABLE, 0);
     digitalWrite(GPIO_R_MOT_STEP, 0);
     digitalWrite(GPIO_R_MOT_STEP, 1);
-    delay(r_delayx / 1000);
+    //delay(r_delayx / 1000);
+    delay(r_delayx*1000);
   }
 }
 template <typename T> int sgn(T val) {
