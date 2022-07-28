@@ -88,20 +88,24 @@ ul {
     margin: 5.5rem auto -6rem;
 }
 
+.intro-text {
+    justify-content: center;
+}
+
 
 .intro-text h2{
     text-align: center;
-    width: 500px;
-    font-size: 2rem;
+    width: 600px;
+    font-size: 2.5rem;
     margin-right: 0%;
     padding: 1rem;
 }
 
 .intro-text h3{
+    margin-left: 40px;
     text-align: center;
     width: 500px;
     font-size: 1.5rem;
-    margin-right: 0%;
     padding: 1rem;
 }
 
