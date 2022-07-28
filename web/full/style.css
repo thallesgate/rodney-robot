@@ -78,7 +78,7 @@ ul {
 .landing-page {
     background-image: url("images/background_picture.png");
     background-position: 0%;
-    background-size:auto 100%;
+    background-size: cover;
     border-radius: 10%;
     display: flex;
     align-items: center;
@@ -102,9 +102,9 @@ ul {
 }
 
 .intro-text h3{
-    margin-left: 40px;
+    margin-left: 0px;
     text-align: center;
-    width: 500px;
+    width: 600px;
     font-size: 1.5rem;
     padding: 1rem;
 }
