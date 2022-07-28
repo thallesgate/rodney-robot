@@ -90,12 +90,22 @@ ul {
 
 
 .intro-text h2{
-    background-color: #b1bbcf;
+    text-align: center;
     width: 500px;
-    font-size: rem;
+    font-size: 2rem;
     margin-right: 0%;
     padding: 1rem;
 }
+
+.intro-text h3{
+    text-align: center;
+    width: 500px;
+    font-size: 1.5rem;
+    margin-right: 0%;
+    padding: 1rem;
+}
+
+
 
 
 
