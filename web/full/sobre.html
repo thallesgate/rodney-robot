@@ -6,7 +6,8 @@
         <link rel="stylesheet" href="styles/index.css">
         <script src="https://kit.fontawesome.com/9f7fbb1207.js" crossorigin="anonymous"></script>
         <script src="scripts/index.js"></script>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="sobre.css">
+        <link rel="sobre_js" href="./scripts/rosfunctions.js">
     </head>
 
     <body>
@@ -31,6 +32,30 @@
                 </li>
             </ul> 
       </nav>
+
+      <section class="sobre_page">
+            <div class="wrapper">
+                <div class="slider-wrap">
+                <div id="slider" class="slider">
+                    <div class="slide"></div>
+                    <div class="slide"></div>
+                    <div class="slide"></div>
+                    <div class="slide"></div>
+                    <div class="slide"></div>
+                </div>
+                </div>
+                <div class="btn-wrap">
+                <i id="prev" class="material-icons btn">&#xE5CB;</i>
+                <i id="next" class="material-icons btn">&#xE5CC;</i>
+                </div>
+            </div>
+
+            <div class="sobre">
+                <p>
+                    O Rodney Interface utiliza o ROS (Robot Operating System) que é uma coleção de frameworks de software para desenvolvimento de um sistema operacional para robôs.<br> Dentro desse sistema possuímos os chamados 'Nós' (ou Nodes), que são programas com uma função específica. Os 'Nós' conseguem trocar informações entre si através de tópicos e mensagens, esses tópicos são como se fossem o título da conversa, e as mensagens são as informações trocadas, podendo ser de todo tipo, como: textos, vetores e até imagens. <br>A página da web utiliza bibliotecas que se comunicam com o sistema do robô para receber e enviar mensagens. É assim que podemos controlá-lo em tempo real, ver imagens da câmera, receber um retorno dos sensores renderizando um mapa, além de enviar comandos e receber dados do robô.
+                </p>
+            </div>
+      </section>
 
     </body>
 </html>

@@ -1,0 +1,173 @@
+/* CSS Variables */
+:root {
+    --normal-font: 200;
+    --bold-font: 600;
+    --bolder-font: 500;
+    --primary-color: #093a96;
+    --secondary-color: #646161;
+    --line-height: 1rem;
+    --transition: 0.05s ease-in;
+}
+  
+  /* Smooth scroll effect */
+html {
+    scroll-behavior: smooth;
+}
+  
+  /* Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: var(--transition);
+}
+  
+body {
+    width: 1920;
+    height: 1080;
+    font-family: "Roboto", sans-serf;
+}
+  
+ul li {
+    list-style-type: none;
+}
+  
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+  
+a:hover {
+    color: var(--secondary-color);
+} 
+
+nav {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    box-shadow: 2px 3px 2px #f1f1f1;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 250;
+}
+  
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.nav-item {
+    margin-left: 2rem;
+    
+}
+  
+.nav-link {
+    font-size: 1.5rem;
+    font-weight: var(--bold-font);
+}
+
+.wrapper
+{
+    margin: 3rem;
+    margin-left: 5rem;
+    position: relative;
+    max-width: 560px;
+    width: 90%;
+    height: 56.25vw;
+    max-height: 540px;
+    box-shadow: 0 0 15px rgba(0,0,0,.35);
+}
+
+/*slider*/
+
+.sobre_page{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.slider-wrap
+{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider
+{
+    position: relative;
+    left: 0;
+    height: 100%;
+    width: 500%;
+    transition: 300ms ease-in-out;
+}
+
+.slide
+{
+    float: left;
+    height: 100%;
+    width: 20%;
+    background-size: cover;
+}
+
+.slide:nth-child(1) { background-image: url(./images/RodneyPrinted\ v16\ \ right_carrossel.png); }
+.slide:nth-child(2) { background-image: url(./images/RodneyPrinted\ v16\ back_carrossel.png); }
+.slide:nth-child(3) { background-image: url(./images/RodneyPrinted\ v16\ top_carrossel.png); }
+.slide:nth-child(4) { background-image: url(./images/RodneyPrinted\ v16_carrossel.png); }
+
+.btn
+{
+    position: absolute;
+    top: 250px;
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    font-weight: 700;
+    color: #FFF;
+    background: #1e837e;
+    cursor: pointer;
+    user-select: none;
+    transition: background 150ms ease-in-out;
+}
+
+.btn:first-child { left: -.5em;  }
+.btn:last-child  { right: -.5em; }
+
+.btn:hover  { background: #131313; }
+.btn:active
+{
+    transform: scale(.97);
+    background: #000;
+}
+
+@media(max-width: 950px)
+{
+  .slide {background-position: center;}
+  
+  .btn { top: -.5em; }
+  .btn:first-child { left: calc(50% - 1em); }
+  .btn:last-child { left: calc(50% + 1em); }
+}
+
+.sobre {
+    font-family: Robot, sans-serif;
+    color: #000;
+    width: 700px;
+    margin-right: 6rem;
+    font-size: 1.5rem;
+    text-align:center;
+    justify-content: center;
+
+}
+
+

@@ -1,0 +1,88 @@
+/* CSS Variables */
+:root {
+    --normal-font: 200;
+    --bold-font: 600;
+    --bolder-font: 500;
+    --primary-color: #093a96;
+    --secondary-color: #646161;
+    --line-height: 1rem;
+    --transition: 0.05s ease-in;
+}
+  
+  /* Smooth scroll effect */
+html {
+    scroll-behavior: smooth;
+}
+  
+  /* Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: var(--transition);
+}
+  
+body {
+    width: 1920;
+    height: 1080;
+    font-family: "Roboto", sans-serf;
+}
+  
+ul li {
+    list-style-type: none;
+}
+  
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+  
+a:hover {
+    color: var(--secondary-color);
+} 
+
+nav {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    box-shadow: 2px 3px 2px #f1f1f1;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 250;
+}
+  
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.nav-item {
+    margin-left: 2rem;
+    
+}
+  
+.nav-link {
+    font-size: 1.5rem;
+    font-weight: var(--bold-font);
+}
+
+.wrapper
+{
+    margin: 3rem;
+    margin-left: 5rem;
+    position: relative;
+    max-width: 560px;
+    width: 90%;
+    height: 56.25vw;
+    max-height: 540px;
+    box-shadow: 0 0 15px rgba(0,0,0,.35);
+}
