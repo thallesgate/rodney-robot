@@ -122,7 +122,7 @@ ul {
 
 .slide:nth-child(1) { background-image: url(./images/RodneyPrinted\ v16\ \ right_carrossel.png); }
 .slide:nth-child(2) { background-image: url(./images/RodneyPrinted\ v16\ back_carrossel.png); }
-.slide:nth-child(3) { background-image: url(./images/RodneyPrinted\ v16\ top_carrossel.png); }
+.slide:nth-child(3) { background-image: url(./images/RodneyPrinted\ v16\ top_carrossel.png); margin-top: 25px;}
 .slide:nth-child(4) { background-image: url(./images/RodneyPrinted\ v16_carrossel.png); }
 
 .btn
