@@ -2,12 +2,19 @@
 var ip_address = '192.168.1.200'; //Robot IP
 var camera_topic = '/camera/rgb/image_color'; //This is to allow us to change between /camera/rgb/image_rect_color and /camera/ir/image_rect_ir
 var occupancygrid_topic = '/map'; //RTABMAP MAP: '/rtabmap/grid_map'; OR /rtabmap/octomap_grid OR grid_map OR odom_local_map
+var laser_topic = '/scan';
+var tf_frame = '/base_link';
 
-var videoFeedWidth = 540;
-var videoFeedHeight = 380;
+var globalWidth = 540;
+var globalHeight = 380;
+
+var videoFeedWidth = globalWidth;
+var videoFeedHeight = globalHeight;
 var videoFeedInterval = 200;
-var mapWidth = 540;
-var mapHeight = 380;
+var mapWidth = globalWidth;
+var mapHeight = globalHeight;
+var laserWidth = globalWidth;
+var laserHeight = globalHeight;
 
 //ROS Connectivity
 //ROS: Initializing ROS Library
@@ -85,12 +92,12 @@ function updateControls(pressedButton){
     case 'left':
       controlMsg.data = 'left';
       twistMsg.linear.x = 0.0;
-      twistMsg.angular.z = 1.5;
+      twistMsg.angular.z = 0.5;
       break;
     case 'right':
       controlMsg.data = 'right';
       twistMsg.linear.x = 0.0;
-      twistMsg.angular.z = -1.5;
+      twistMsg.angular.z = -0.5;
       break;
   }
   publishControls();
@@ -115,7 +122,7 @@ function initialize(){
     document.getElementById("jsVelocityDataX").innerHTML = 'X: ' + message.linear.x + ' m/s'
     document.getElementById("jsVelocityDataZ").innerHTML = 'Z: ' + message.angular.z + ' πrad/s'
   })
-  
+ 
   //MJPEG library function
   var streamViewer = new MJPEGCANVAS.Viewer({
     divID : 'jsVideoFeed', //div for viewer generation
@@ -126,23 +133,25 @@ function initialize(){
     interval : videoFeedInterval
   });
 
-  //ROS2D Map Viewer
-  var mapViewer = new ROS2D.Viewer({
-    divID : 'jsMap', //same happens here
+  //ROS3D Map Viewer
+  var viewer = new ROS3D.Viewer({
+    divID : 'jsMap',
     width : mapWidth,
-    height : mapHeight  
+    height : mapHeight,
+    antialias : true
   });
 
-  var gridClient = new ROS2D.OccupancyGridClient({
+  // Setup the marker client.
+  var gridClient = new ROS3D.OccupancyGridClient({
     ros : ros,
-    rootObject : mapViewer.scene,
-    topic : occupancygrid_topic,
-    continuous : true,
+    rootObject : viewer.scene,
+    continuous: true
   });
 
-  gridClient.on('change', function(){
+
+  /*gridClient.on('change', function(){
     mapViewer.scaleToDimensions(gridClient.currentGrid.width, gridClient.currentGrid.height);
     mapViewer.shift(gridClient.currentGrid.pose.position.x, gridClient.currentGrid.pose.position.y);
-  });
+  });*/
 
 }

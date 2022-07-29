@@ -6,7 +6,7 @@
 #include <ros/time.h>
 
 #define LOOPTIME                      100     
-const byte noCommLoopMax = 10;
+const byte noCommLoopMax = 20;
 unsigned int noCommLoops = 0;
 
 #define GPIO_MOT_ENABLE 2//PA8
