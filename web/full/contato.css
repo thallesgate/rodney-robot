@@ -76,10 +76,10 @@ ul {
 }
 
 .main{
+    height: 200px;
     width: 100%;
-    height: 90%;
     min-height: 600px;
-    margin-top: 10px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,8 +94,8 @@ body::before{
 }
 
 .container{
-    width: 60%;
-    height: 50vh;
+    width: 900px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,7 +114,7 @@ body::before{
 }
 .container .image{
     width: 50%;
-    height: 100vh;
+    height: 200px;
     display: flex;
     align-items: center;
     position: relative;
@@ -160,7 +160,7 @@ body::before{
     width: 60%;
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: -20px;
 }
 .container .form-area form input{
     padding: 15px 5px;
@@ -217,18 +217,20 @@ body::before{
     background-color: #1e837e;
 }
 .container .form-area .social-icons{
-    margin-top: 50px;
+    margin-top: 20px;
     display: flex;
 }
 .container .form-area .social-icons i{
     margin-right:  10px;
     padding: 10px;
+    width: 40px;
     border-radius: 50%;
     cursor: pointer;
 }
 .container .form-area .social-icons .facebook{
     background-color: #3b5998;
     color: #fff;
+    
 }
 .container .form-area .social-icons .instagram{
     background: linear-gradient(167deg, #0085fc 0%, #f700da 30%, #f7ed00 90%);
@@ -238,6 +240,22 @@ body::before{
     background-color: #0e76a8;
     color: #fff;
 }
+
+.fa-facebook-f::before{
+    content: "\f39e";
+    margin-left: 4px;
+}
+
+.fa-instagram:before {
+    content: "\f16d";
+    margin-left: 3px;
+}
+
+.fa-linkedin-in:before {
+    content: "\f0e1";
+    margin-left: 3px;
+}
+
 
 @media (min-width:1200px){
     .main .container{
@@ -260,7 +278,7 @@ body::before{
     }
 }
 
-@media (max-width:900px) and (min-width:600px){
+@media (max-width: 800px) and (min-width: 600px){
     body::before{
         height: 150px;
         width: 150px;
