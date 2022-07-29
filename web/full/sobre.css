@@ -154,7 +154,7 @@ ul {
 {
   .slide {background-position: center;}
   
-  .btn { top: -.5em; }
+  .btn { top: 50% 5em; }
   .btn:first-child { left: calc(50% - 1em); }
   .btn:last-child { left: calc(50% + 1em); }
 }
@@ -165,7 +165,7 @@ ul {
     width: 710px;
     margin-right: 6rem;
     font-size: 1.5rem;
-    text-align:center;
+    text-align:justify;
     justify-content: center;
 
 }
