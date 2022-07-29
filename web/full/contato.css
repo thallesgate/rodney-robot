@@ -6,7 +6,7 @@
     --primary-color: #093a96;
     --secondary-color: #646161;
     --line-height: 1rem;
-    --transition: 0.05s ease-in;
+    /* --transition: 0.05s ease-in; */
 }
   
   /* Smooth scroll effect */
@@ -73,4 +73,249 @@ ul {
 .nav-link {
     font-size: 1.5rem;
     font-weight: var(--bold-font);
+}
+
+.main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+body::before{
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    
+}
+
+.container{
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0px 2px 15px -4px #9e9e9e;
+    border-radius: 5px;
+    
+}
+@keyframes container {
+    0%{
+        margin-top: -100%;
+    }
+    100%{
+        top: 0;
+    }
+}
+.container .image{
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.container .image::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #f0f6ff;
+   
+}
+
+.container .image img{
+    margin-left: 130px;
+    margin-bottom: -65px;
+    height: 550px;
+    z-index: 1;
+}
+.container .form-area{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+@keyframes form {
+    0%{
+        margin-left: 500px;
+    }
+    100%{
+        left: 0;
+    }
+}
+.container .form-area h2{
+    font-size: 30px;
+    font-family: "Roboto", sans-serf;
+}
+.container .form-area form{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.container .form-area form input{
+    padding: 15px 5px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+}
+.container .form-area form input::placeholder{
+    color: #999;
+    letter-spacing: 1px;
+}
+.container .form-area form input:hover::placeholder,
+.container .form-area form textarea:hover::placeholder{
+    padding-left: 10px;
+    transition: .3s all ease-in-out;
+}
+.container .form-area form input:focus,
+.container .form-area form textarea:focus{
+    border-bottom: 1px solid #62c3fc;
+    animation: border .5s ease;
+}
+@keyframes border {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+.container .form-area form textarea{
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+    resize: none;
+    padding: 0px 5px;
+}
+.container .form-area form textarea::placeholder{
+    font-size: 14px;
+    color: #999;
+}
+.container .form-area form button{
+    margin-top: 10px;
+    border: none;
+    padding: 10px 0px;
+    border-radius: 30px;
+    background-color: #1e837e;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+   
+}
+.container .form-area form button:hover{
+    background-color: #1e837e;
+}
+.container .form-area .social-icons{
+    margin-top: 50px;
+    display: flex;
+}
+.container .form-area .social-icons i{
+    margin-right:  10px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.container .form-area .social-icons .facebook{
+    background-color: #3b5998;
+    color: #fff;
+}
+.container .form-area .social-icons .instagram{
+    background: linear-gradient(167deg, #0085fc 0%, #f700da 30%, #f7ed00 90%);
+    color: #fff;
+}
+.container .form-area .social-icons .linkedin{
+    background-color: #0e76a8;
+    color: #fff;
+}
+
+@media (min-width:1200px){
+    .main .container{
+        height: 85vh;
+    }
+}
+@media (max-width:1200px) and (min-width:900px){
+    body::before{
+        height: 200px;
+        width: 200px;
+    }
+    .main .container{
+        height: 85vh;
+    }
+    .main .container .image img{
+        margin-left: 30px;
+    }
+    .main .container .form-area h2{
+        font-size: 25px;
+    }
+}
+
+@media (max-width:900px) and (min-width:600px){
+    body::before{
+        height: 150px;
+        width: 150px;
+    }
+    .main .container{
+        width: 95%;
+        height: 85vh;
+    }
+    .main .container .image img{
+        height: 150px;
+        margin-left: 30px;
+    }
+    .main .container .form-area form{
+        width: 90%;
+    }
+}
+@media (max-width:600px){
+    body{
+        height: auto;
+    }
+    body::before{
+        height: 100px;
+        width: 100px;
+    }
+    .main .container{
+        width: 98%;
+        height: auto;
+        flex-direction: column;
+        margin: 20px 0px;
+        box-shadow: none;
+    }
+    .main .container .image{
+        height: 200px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .main .container .image::before{
+        height: 200px;
+        clip-path: polygon(0% 0%, 100% 0, 100% 81%, 50% 100%, 0 81%);
+    }
+    .main .container .image img{
+        height: 150px;
+        margin-left: 0px;
+        margin-top: -40px;
+    }
+    .main .container .form-area{
+        width: 100%;
+    }
+    .main .container .form-area h2{
+        font-size: 25px;
+    }
+    .main .container .form-area form{
+        width: 90%;
+        margin-top: 10px;
+    }
+    .main .container .social-icons{
+        margin: 20px 0px;
+    }
 }
