@@ -156,6 +156,7 @@ ul {
     font-style: normal;
     /* font-size: 24px; */
     line-height: 1;
+    border-radius: 50%;
     letter-spacing: normal;
     text-transform: none;
     display: inline-block;
