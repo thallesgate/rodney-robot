@@ -117,6 +117,7 @@ void loop() {
   
   motorControl(l_delay,r_delay,l_mot_dir,r_mot_dir,l_mot_run,r_mot_run);
  }
+
 void checkRosConnection(){
     if (!nh.connected()){
       led_iterator++;
@@ -231,7 +232,7 @@ void motorControl(double l_delayx, double r_delayx, bool l_dir, bool r_dir, bool
   }
   if(r_mot_dir){
     //pos_right++;
-    digitalWrite(GPIO_R_MOT_DIR, 0);
+    digitalWrite(GPIO_R_MOT_DIR, 1);
   }else{
     //pos_right--;
     digitalWrite(GPIO_R_MOT_DIR, 0);
@@ -241,14 +242,14 @@ void motorControl(double l_delayx, double r_delayx, bool l_dir, bool r_dir, bool
     digitalWrite(GPIO_L_MOT_STEP, 0);
     digitalWrite(GPIO_L_MOT_STEP, 1);
     //delay(l_delayx / 1000);
-    delay(l_delayx*1000);
+    delayMicroseconds(l_delayx*1000000);
   }
   if (r_enable){
     digitalWrite(GPIO_MOT_ENABLE, enabled);
     digitalWrite(GPIO_R_MOT_STEP, 0);
     digitalWrite(GPIO_R_MOT_STEP, 1);
     //delay(r_delayx / 1000);
-    delay(r_delayx*1000);
+    delayMicroseconds(r_delayx*1000000);
   }
 }
 template <typename T> int sgn(T val) {
