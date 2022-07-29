@@ -77,7 +77,9 @@ ul {
 
 .main{
     width: 100%;
-    min-height: 100vh;
+    height: 90%;
+    min-height: 600px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,8 +94,8 @@ body::before{
 }
 
 .container{
-    width: 80%;
-    height: 80vh;
+    width: 60%;
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,9 +130,9 @@ body::before{
 }
 
 .container .image img{
-    margin-left: 130px;
+    margin-left: 0px;
     margin-bottom: -65px;
-    height: 550px;
+    height: 700px;
     z-index: 1;
 }
 .container .form-area{
