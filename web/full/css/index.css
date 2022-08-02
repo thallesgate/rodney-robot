@@ -77,7 +77,7 @@ ul {
 }
 
 .landing-page {
-    background-image: url("images/background_picture.png");
+    background-image: url("../img/background_picture.png");
     background-position: 0%;
     background-size: cover;
     border-radius: 10%;
@@ -110,12 +110,3 @@ ul {
     font-size: 1.8rem;
     padding: 1rem;
 }
-
-
-
-
-
-
-
-
-  
